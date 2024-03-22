@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Share_Tech_Mono } from "next/font/google";
 import "./globals.css";
+import { TailwindIndicator } from "@/components/TwIndicatior";
 
 const inter = Inter({ subsets: ["latin"] });
+const shareTechMono = Share_Tech_Mono({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={shareTechMono.className}>
+        <div className="flex h-screen bg-black text-red-500">
+          <div className="flex-1">{children}</div>
+        </div>
+        {/* <TailwindIndicator /> */}
+      </body>
     </html>
   );
 }
