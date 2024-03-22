@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+img {
+  max-width: fit-content;
+  height: auto;
+}

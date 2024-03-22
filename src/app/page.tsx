@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/Navbar";
-import { LeftBar } from "@/components/main/LeftBar";
+import { RightBar } from "@/components/main/RightBar";
 import { MainScreen } from "@/components/main/MainScreen";
 import { fakeFeed, fakeLeaderboard } from "./config/fake-lb";
 
@@ -22,8 +22,8 @@ export default function Home() {
             <MainScreen leaderboard={leaderboard} feedData={feed} />
           </div>
 
-          {/* Left Sidebar */}
-          <LeftBar />
+          {/* Right Sidebar */}
+          <RightBar />
         </div>
       </div>
     </main>

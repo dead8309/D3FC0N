@@ -7,7 +7,7 @@ const transition: Transition = {
   yoyo: Infinity,
   ease: "easeInOut",
   repeat: Infinity,
-  repeatDelay: 2
+  repeatDelay: 2,
 };
 
 export const Icons = {

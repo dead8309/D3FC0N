@@ -4,6 +4,7 @@ import { TFeed, TLeaderboard, fakeFeed } from "@/app/config/fake-lb";
 import { Leaderboard } from "./Leaderboard";
 import { Icons } from "../Icons";
 import { Feed } from "./Feed";
+import Image from "next/image";
 
 interface MainScreenProps {
   leaderboard: TLeaderboard[];
@@ -14,10 +15,13 @@ export const MainScreen = ({ leaderboard, feedData }: MainScreenProps) => {
   return (
     <div className="flex w-full h-full  items-start divide-x-2 divide-red-500 overflow-hidden">
       {/* Left Sidebar */}
-      <div className="flex w-[106px] h-full items-center justify-center px-5">
-        <span className="text-4xl lg:text-6xl xl:text-8xl rotate-[270deg]">
-          Scoreboard
-        </span>
+
+      <div className="flex w-grid-col-3 h-full items-center justify-center px-5">
+        <img
+          src="/scoreboard.svg"
+          alt="scoreboard"
+          className="-rotate-90 h-[8vw]"
+        />
       </div>
 
       <div className="h-full flex w-full divide-x-2 divide-red-500">
