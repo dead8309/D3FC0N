@@ -36,3 +36,48 @@ img {
   max-width: fit-content;
   height: auto;
 }
+
+@layer base {
+  html {
+     	scrollbar-gutter: stable;
+  }
+
+  /* Mobile tap highlight */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color */
+  html {
+  	-webkit-tap-highlight-color: rgba(128, 128, 128, 0.5);
+  }
+
+  /* === Scrollbars === */
+
+  ::-webkit-scrollbar {
+  	@apply w-1;
+  	@apply h-1;
+  }
+
+  ::-webkit-scrollbar-track {
+  	@apply !bg-black
+  }
+  ::-webkit-scrollbar-thumb {
+  	@apply rounded-sm !bg-black
+  }
+
+  /* Firefox */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color#browser_compatibility */
+  html {
+  	scrollbar-color: black
+  }
+
+  html.dark {
+  	scrollbar-color: black
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+  	display: none;
+  }
+
+  .hide-scrollbar {
+  	-ms-overflow-style: none;
+  	scrollbar-width: none;
+  }
+}

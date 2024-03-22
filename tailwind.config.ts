@@ -11,7 +11,8 @@ const config: Config = {
       width: {
         "grid-col-2": "calc((2/24)*100vw)",
         "grid-col-3": "calc((3/24)*100vw)",
-        "grid-col-4": "calc((4/24)*100vw)"
+        "grid-col-4": "calc((4/24)*100vw)",
+        "grid-col-22": "calc((22/24)*100vw)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

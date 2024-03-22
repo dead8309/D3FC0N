@@ -1,6 +1,5 @@
 "use client";
-import { siteConfig } from "@/app/config/site";
-import { Icons } from "../Icons";
+import { siteConfig } from "@/config/site";
 
 export const RightBar = () => {
   return (

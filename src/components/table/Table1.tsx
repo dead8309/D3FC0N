@@ -1,4 +1,4 @@
-import { TLeaderboard } from "@/app/config/fake-lb";
+import { TLeaderboard } from "@/config/fake-lb";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface Table1Props {

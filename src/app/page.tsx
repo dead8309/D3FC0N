@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { RightBar } from "@/components/main/RightBar";
 import { MainScreen } from "@/components/main/MainScreen";
-import { fakeFeed, fakeLeaderboard } from "./config/fake-lb";
+import { fakeFeed, fakeLeaderboard } from "../config/fake-lb";
 
 export default function Home() {
   const notifications = 16;
@@ -15,7 +15,7 @@ export default function Home() {
       <div className="h-full">
         <div className="flex h-full divide-x-2 divide-red-500">
           {/* Navbar with main screen */}
-          <div className="w-full h-full flex flex-col divide-y-2 divide-red-500">
+          <div className="w-grid-col-22 h-full flex flex-col divide-y-2 divide-red-500">
             <Navbar notifications={notifications} />
 
             {/* Main Screen */}

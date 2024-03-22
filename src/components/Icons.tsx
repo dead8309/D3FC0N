@@ -1,14 +1,4 @@
-import { motion } from "framer-motion";
 import { LucideProps } from "lucide-react";
-import type { Transition } from "framer-motion";
-
-const transition: Transition = {
-  duration: 5,
-  yoyo: Infinity,
-  ease: "easeInOut",
-  repeat: Infinity,
-  repeatDelay: 2,
-};
 
 export const Icons = {
   flag: (props: LucideProps) => (
@@ -16,13 +6,11 @@ export const Icons = {
       width="50"
       height="57"
       viewBox="0 0 50 57"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
         d="M6.5 15.5V57M8.5 13H14.5M15.5 16.5H22M22 20.5H26M26 23.5H35.5M35.5 20.5H50M44.5 22V25M41.5 25V29.5M38.5 29.5V36.5M35.5 37.5H29.5M29.5 41.5H18M18 37.5H7.5M6.5 0V4.5M8.5 6H12M6.5 8V12M5 6H0"
-        stroke="#C51327"
         strokeWidth="4"
       />
     </svg>
@@ -36,67 +24,13 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
+      <path
         d="M197.5 8.5H0"
         stroke="#C51327"
-        strokeWidth="2"
         strokeDasharray="4 4"
       />
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
+      <path
         d="M37 16.5L45.5 8.5L37 1M107.5 16.5L117 8.5L107.5 1M179.5 16.5L188.5 8.5L179.5 1"
-        stroke="#C51327"
-        strokeWidth="2"
-      />
-    </svg>
-  ),
-  graph: (props: LucideProps) => (
-    <svg
-      width="198"
-      height="51"
-      viewBox="0 0 198 51"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
-        d="M1 38.5V49.5H11.5M11.5 2H1V14M196.5 38.5V49.5H185M196.5 14V2H185"
-        stroke="#C51327"
-      />
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
-        d="M1.5 47.5C13.3994 42.8054 17.5452 37.5306 21 24C24.6579 7.86231 28.3916 1.63793 39 1C51.604 1.07447 53.5796 9.86398 58 24C62.6165 39.4792 66.8845 44.1818 78.5 48.5C81.8416 49.8103 83.9076 49.86 88 48.5"
-        stroke="#C51327"
-      />
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
-        d="M188.358 24.7622C184.302 40.0814 180.552 44.7354 170.347 49.0089C167.411 50.3057 165.596 50.3549 162 49.0089"
-        stroke="#C51327"
-      />
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
-        d="M86.5 49C98.3994 44.3054 101.045 37.5306 104.5 24C108.158 7.86231 111.892 1.63793 122.5 1C135.104 1.07447 137.08 9.86398 141.5 24C146.116 39.4792 151.885 45.1818 163.5 49.5"
-        stroke="#C51327"
-      />
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={transition}
-        d="M188 26C190.217 17.6202 192.09 13.4829 197 7.5"
         stroke="#C51327"
       />
     </svg>

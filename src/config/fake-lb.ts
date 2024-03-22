@@ -1,3 +1,5 @@
+import { TFeed } from "@/types";
+
 export const fakeLeaderboard = [
   {
     place: 1,
@@ -61,18 +63,24 @@ export const fakeLeaderboard = [
   },
 ];
 
+
+
 export const fakeFeed = [
   {
-    teamName: "_mm_",
+    teamName: "Redrocket",
     points: 10,
+    description: 'just passed _mm_',
+    img: '/nyan-cat.gif'
   },
   {
-    teamName: "Redrocket",
+    teamName: "_mm_",
     points: 10,
   },
   {
     teamName: "funkys",
     points: 10,
+    description: 'got rickrolled',
+    img: '/troll.gif'
   },
   {
     teamName: "dragonsector",
@@ -89,6 +97,8 @@ export const fakeFeed = [
   {
     teamName: "pgts",
     points: -10,
+    description: 'got rickrolled',
+    img: '/troll.gif'
   },
   {
     teamName: "abcs",
@@ -99,8 +109,10 @@ export const fakeFeed = [
     points: -10,
   },
   {
-    teamName: "_mm_",
+    teamName: "asdf",
     points: 10,
+    description: 'just passed hello',
+    img: '/nyan-cat.gif'
   },
   {
     teamName: "_mm_",
@@ -113,6 +125,8 @@ export const fakeFeed = [
   {
     teamName: "funkys",
     points: -10,
+    description: 'got rickrolled',
+    img: '/troll.gif'
   },
   {
     teamName: "hello",
@@ -125,6 +139,8 @@ export const fakeFeed = [
   {
     teamName: "abcs",
     points: 10,
+    description: 'got rickrolled',
+    img: '/troll.gif'
   },
   {
     teamName: "lmnop",
@@ -137,6 +153,8 @@ export const fakeFeed = [
   {
     teamName: "xyz",
     points: 10,
+    description: 'got rickrolled',
+    img: '/troll.gif'
   },
   {
     teamName: "hello",
@@ -149,6 +167,8 @@ export const fakeFeed = [
   {
     teamName: "abcs",
     points: 10,
+    description: 'got rickrolled',
+    img: '/troll.gif'
   },
   {
     teamName: "Redrocket",
@@ -169,6 +189,8 @@ export const fakeFeed = [
   {
     teamName: "pgts",
     points: 10,
+    description: 'just passed _mm_',
+    img: '/nyan-cat.gif'
   },
   {
     teamName: "abcs",
@@ -178,16 +200,5 @@ export const fakeFeed = [
     teamName: "xyz",
     points: 10,
   },
-];
+] satisfies TFeed[]
 
-export type TLeaderboard = {
-  place: number;
-  teamName: string;
-  flagsCaptured: number;
-  score: number;
-};
-
-export type TFeed = {
-  teamName: string;
-  points: number;
-};
