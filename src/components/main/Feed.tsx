@@ -5,7 +5,7 @@ interface FeedProps {
   data?: TFeed[];
 }
 export const Feed = ({ data }: FeedProps) => (
-  <ul className="h-screen overflow-y-scroll">
+  <ul className="h-screen overflow-y-scroll cursor-pointer">
     {data?.map((item, index) => (
       <li
         key={index}

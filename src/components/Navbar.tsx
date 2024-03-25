@@ -9,13 +9,11 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ notifications }: NavbarProps) => {
-  const [mouseY, setMouseY] = useState(0.0);
-  const [mouseX, setMouseX] = useState(0.0);
+  const [postion, setPosition] = useState({ x: 0, y: 0 });
   const currentDate = new Date();
 
   const handleMouseMove = (e: MouseEvent) => {
-    setMouseX(e.clientX);
-    setMouseY(e.clientY);
+    setPosition({ x: e.clientX, y: e.clientY });
   };
 
   useEffect(() => {
@@ -47,8 +45,8 @@ export const Navbar = ({ notifications }: NavbarProps) => {
         </div>
         <div className="flex items-center divide-x-2 divide-dotted divide-red-500 *:px-5">
           <div className="flex flex-col text-sm">
-            <span>{mouseX}</span>
-            <span>{mouseY}</span>
+            <span>{postion.x}</span>
+            <span>{postion.y}</span>
           </div>
 
           {currentDate < siteConfig.endDate ? (

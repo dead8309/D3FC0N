@@ -16,9 +16,9 @@ export const RightBar = () => {
       </a>
       <a
         className="flex items-center justify-center h-full hover:bg-white/90"
-        href={siteConfig.links.my_team}
+        href={siteConfig.links.terminal}
       >
-        <img src="/team.svg" alt="My Team" className="h-[4vw] -rotate-90" />
+        <img src="/terminal.svg" alt="My Team" className="h-[4vw] -rotate-90" />
       </a>
     </div>
   );

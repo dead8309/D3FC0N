@@ -2,6 +2,7 @@
 import { TLeaderboard } from "@/types";
 import { Icons } from "../Icons";
 import { Table1 } from "../table/Table1";
+import { Table2 } from "../table/Table2";
 
 interface LeaderboardProps {
   data: TLeaderboard[];
@@ -9,10 +10,10 @@ interface LeaderboardProps {
 
 export const Leaderboard = ({ data }: LeaderboardProps) => {
   return (
-    <div className="flex w-full h-full flex-col justify-center divide-y-2 divide-red-500">
+    <div className="flex w-grid-col-13 h-full flex-col divide-y-2 divide-red-500">
       {/* Main Content */}
-      <div className="relative w-full px-5 py-5">
-        <Table1 data={data} />
+      <div className="relative flex-1 w-full px-5 py-5 overflow-y-scroll text-[1.25vw]">
+        <Table2 data={data}  />
       </div>
 
       {/* Footer */}

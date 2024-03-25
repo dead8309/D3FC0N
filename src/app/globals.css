@@ -45,31 +45,26 @@ img {
   /* Mobile tap highlight */
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color */
   html {
-  	-webkit-tap-highlight-color: rgba(128, 128, 128, 0.5);
+  	-webkit-tap-highlight-color: rgb(239 68 68);
   }
 
   /* === Scrollbars === */
 
   ::-webkit-scrollbar {
-  	@apply w-1;
-  	@apply h-1;
+  	@apply w-2;
+  	@apply h-2;
   }
 
   ::-webkit-scrollbar-track {
-  	@apply !bg-black
+  	@apply !bg-slate-800
   }
   ::-webkit-scrollbar-thumb {
-  	@apply rounded-sm !bg-black
+  	@apply rounded-sm !bg-red-700
   }
 
   /* Firefox */
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color#browser_compatibility */
   html {
-  	scrollbar-color: black
-  }
-
-  html.dark {
-  	scrollbar-color: black
+  	scrollbar-color: red
   }
 
   .hide-scrollbar::-webkit-scrollbar {

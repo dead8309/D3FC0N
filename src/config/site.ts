@@ -1,7 +1,7 @@
 export const siteConfig = {
     links: {
         challanges: '/challanges',
-        my_team: '/my-team',
+        terminal: '/terminal',
     },
     endDate: new Date("2024-04-01")
 }

@@ -29,7 +29,7 @@ export const MainScreen = ({ leaderboard, feedData }: MainScreenProps) => {
         <Leaderboard data={leaderboard} />
 
         {/* Current Feed */}
-        <div className="flex w-1/2 flex-col">
+        <div className="flex w-grid-col-6 flex-col">
           <div className="w-full flex flex-col">
             <div className="w-full border-b border-red-500">
               <span className="w-full text-lg ml-4 uppercase font-light">
