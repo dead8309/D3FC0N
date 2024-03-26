@@ -1,14 +1,14 @@
 "use client";
 
 import { fakeFeed } from "@/config/fake-lb";
-import { TFeed, TLeaderboard } from "@/types";
+import { TFeed, LeaderboardType } from "@/types";
 import { Leaderboard } from "./Leaderboard";
 import { Icons } from "../Icons";
 import { Feed } from "./Feed";
 import Image from "next/image";
 
 interface MainScreenProps {
-  leaderboard: TLeaderboard[];
+  leaderboard: LeaderboardType[];
   feedData?: TFeed[];
 }
 
@@ -118,7 +118,6 @@ export const MainScreen = ({ leaderboard, feedData }: MainScreenProps) => {
             </div>
           </div> */}
       </div>
-      
     </div>
   );
 };

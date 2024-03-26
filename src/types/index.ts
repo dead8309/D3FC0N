@@ -5,12 +5,17 @@ export type TLeaderboard = {
   score: number;
 };
 
-
-export type TEmoticons = '/nyan-cat.gif' | '/troll.gif'
+export type TEmoticons = "/nyan-cat.gif" | "/troll.gif";
 
 export type TFeed = {
   teamName: string;
   points: number;
   description?: string;
   img?: TEmoticons;
+};
+
+export type LeaderboardType = {
+  userName: string;
+  level: number;
+  score: number;
 };
