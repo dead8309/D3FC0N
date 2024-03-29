@@ -33,7 +33,7 @@ export const Table2 = ({ data }: Table2Props) => (
       </div>
     </li>
 
-    {data.length > 0 ? (
+    {data && data.length > 0 ? (
       data.map((item, index) => (
         <li
           key={index}
