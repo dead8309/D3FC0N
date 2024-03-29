@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001");
+    const newSocket = io("https://d3fcon-backend.onrender.com/");
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
