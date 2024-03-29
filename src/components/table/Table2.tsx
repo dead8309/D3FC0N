@@ -1,7 +1,7 @@
-import { TLeaderboard } from "@/types";
+import { LeaderboardType } from "@/types";
 
 interface Table2Props {
-  data: TLeaderboard[];
+  data: LeaderboardType[];
 }
 
 export const Table2 = ({ data }: Table2Props) => (
@@ -33,16 +33,20 @@ export const Table2 = ({ data }: Table2Props) => (
       </div>
     </li>
 
-    {data.map((item, index) => (
-      <li
-        key={index}
-        className="p-1 flex w-full items-center justify-between hover:border hover:border-dashed hover:border-red-400 cursor-pointer"
-      >
-        <div className="w-[calc((2/24)*100vw)]">{item.place}</div>
-        <div className="w-[calc((4/24)*100vw)]">{item.teamName}</div>
-        <div className="w-[calc((3/24)*100vw)]">{item.flagsCaptured}</div>
-        <div className="w-[calc((2/24)*100vw)]">{item.score}</div>
-      </li>
-    ))}
+    {data.length > 0 ? (
+      data.map((item, index) => (
+        <li
+          key={index}
+          className="p-1 flex w-full items-center justify-between hover:border hover:border-dashed hover:border-red-400 cursor-pointer"
+        >
+          <div className="w-[calc((2/24)*100vw)]">{index + 1}</div>
+          <div className="w-[calc((4/24)*100vw)]">{item.userName}</div>
+          <div className="w-[calc((3/24)*100vw)]">{item.level}</div>
+          <div className="w-[calc((2/24)*100vw)]">{item.score}</div>
+        </li>
+      ))
+    ) : (
+      <h1>Loading...</h1>
+    )}
   </ol>
 );

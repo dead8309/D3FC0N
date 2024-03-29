@@ -1,25 +1,43 @@
-'use client'
+"use client";
 
 import { Navbar } from "@/components/Navbar";
 import { RightBar } from "@/components/main/RightBar";
 import { MainScreen } from "@/components/main/MainScreen";
 import { fakeFeed, fakeLeaderboard } from "../config/fake-lb";
 import { useEffect, useMemo, useState } from "react";
+import io, { Socket } from "socket.io-client";
+import { LeaderboardType } from "@/types";
 
 export default function Home() {
   const notifications = 16;
-  const leaderboard = fakeLeaderboard
-  const [feed,setFeed] = useState(fakeFeed)
+  const [socket, setSocket] = useState<Socket | null>(null);
+  const [leaderboard, setLeaderboard] = useState<LeaderboardType[]>([]);
+  const [feed, setFeed] = useState(fakeFeed);
 
   useEffect(() => {
+    const newSocket = io(process.env.SOCKET_URL || "http://localhost:3000");
+    setSocket(newSocket);
+
+    newSocket.on("connect", () => {
+      console.log("Connected to server");
+    });
+
+    newSocket.on("change", (data) => {
+      console.log("Received data:", data);
+      setLeaderboard(data);
+    });
+
+    newSocket.on("disconnect", () => {
+      console.log("Disconnected from server");
+    });
     const randomFeed = setInterval(() => {
       const randomIndex = Math.floor(Math.random() * fakeFeed.length);
       const randomFeed = fakeFeed[randomIndex];
-      setFeed(prev => [randomFeed, ...prev])
-    }, 500)
+      setFeed((prev) => [randomFeed, ...prev]);
+    }, 500);
 
-    return () => clearInterval(randomFeed)
-  }, [])
+    return () => clearInterval(randomFeed);
+  }, []);
 
   return (
     <main className="h-full overflow-hidden">
