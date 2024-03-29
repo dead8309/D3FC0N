@@ -6,16 +6,24 @@ import { MainScreen } from "@/components/main/MainScreen";
 import { fakeFeed, fakeLeaderboard } from "../config/fake-lb";
 import { useEffect, useMemo, useState } from "react";
 import io, { Socket } from "socket.io-client";
-import { LeaderboardType } from "@/types";
+import { FeedType, LeaderboardType } from "@/types";
 
 export default function Home() {
   const notifications = 16;
   const [socket, setSocket] = useState<Socket | null>(null);
   const [leaderboard, setLeaderboard] = useState<LeaderboardType[]>([]);
-  const [feed, setFeed] = useState(fakeFeed);
+  const [feed, setFeed] = useState<FeedType[]>([]);
+
+  const findLeaderboardEntry = (
+    leaderboardArray: LeaderboardType[],
+    documentKeyId: string
+  ): string | undefined => {
+    return leaderboardArray.find((entry) => entry._id === documentKeyId)
+      ?.userName;
+  };
 
   useEffect(() => {
-    const newSocket = io(process.env.SOCKET_URL || "http://localhost:3000");
+    const newSocket = io("http://localhost:3001");
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
@@ -24,19 +32,19 @@ export default function Home() {
 
     newSocket.on("change", (data) => {
       console.log("Received data:", data);
-      setLeaderboard(data);
+      setLeaderboard(data.data);
+      if (data.change) {
+        const username = findLeaderboardEntry(
+          data.data,
+          data.change.documentKey._id
+        );
+        setFeed((prev) => [...prev, { ...data.change, username }].reverse());
+      }
     });
 
     newSocket.on("disconnect", () => {
       console.log("Disconnected from server");
     });
-    const randomFeed = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * fakeFeed.length);
-      const randomFeed = fakeFeed[randomIndex];
-      setFeed((prev) => [randomFeed, ...prev]);
-    }, 500);
-
-    return () => clearInterval(randomFeed);
   }, []);
 
   return (
