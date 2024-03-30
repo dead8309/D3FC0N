@@ -27,22 +27,23 @@ export const Navbar = ({ notifications }: NavbarProps) => {
     <nav className="flex w-full items-center justify-between px-8 py-5">
       <div className="flex text-xs gap-2 lg:gap-10">
         <img src="/flag.gif" alt="flag" className="w-14 h-14" />
-        <div className="mt-4 relative border border-red-500 w-[198px] h-4">
-          <p className="absolute p-4 -top-4 left-1 w-[190px] bg-black">
-            not logged in
+        <div className="mt-4 relative border border-red-500 w-[148px] h-4">
+          <p className="absolute p-4 -top-4 left-1 w-[137px] bg-black">
+            127.0.0.1
           </p>
         </div>
       </div>
 
       <div className="flex items-center gap-2 *:text-md">
-        <div className="relative border border-red-500 w-56 h-14">
+        {/* <div className="relative border border-red-500 w-56 h-14">
           <div className="absolute p-4 -top-3 left-3 w-48 h-20 bg-black">
             <p className="flex flex-col items-center px-2">
               <span>NOTIFICATONS</span>
               <span>&#40;{notifications}&#41;</span>
             </p>
           </div>
-        </div>
+        </div> */}
+        <img src="/game.gif" alt="flag" className="w-full h-[77px]" />
         <div className="flex items-center divide-x-2 divide-dotted divide-red-500 *:px-5">
           <div className="flex flex-col text-sm">
             <span>{postion.x}</span>
