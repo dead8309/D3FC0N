@@ -33,7 +33,7 @@ export default function Home() {
     newSocket.on("change", (data) => {
       console.log("Received data:", data);
       setLeaderboard(data.data);
-      if (data.change) {
+      if (data.change && data.change.updateDescription.updatedFields.score) {
         const username = findLeaderboardEntry(
           data.data,
           data.change.documentKey._id
